@@ -6,5 +6,7 @@
     "start": "npx http-server src -p 8080",
     "test": "bash tests/smoke_test.sh"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "docker": "^1.0.0"
+  }
 }
