@@ -1,8 +1,3 @@
-
----
-
-### `src/index.html`
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,34 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Veolve — Coming Soon</title>
   <meta name="description" content="Veolve is cooking something awesome — launching soon." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="page-bg">
-    <main class="card">
-      <header class="card-header">
+  <div class="page-bg" role="main">
+    <main class="card" aria-labelledby="hero-title">
+      <header class="card-header" aria-hidden="true">
         <img src="assets/logo.svg" alt="Veolve logo" class="logo">
       </header>
 
-      <section class="hero">
-        <div class="emoji">👍</div>
+      <section class="hero" id="hero">
+        <div class="emoji" aria-hidden="true">👍</div>
         <p class="kicker">WE'RE STILL</p>
-        <h1>Cooking Our Website.</h1>
+        <h1 id="hero-title">Cooking Our Website.</h1>
         <p class="sub">We are going to launch our website very soon. Stay tuned.</p>
 
-        <form id="notify-form" class="notify">
-          <div class="input-wrap">
-            <input id="email" name="email" type="email" placeholder="Enter your email" required>
-          </div>
+        <form id="notify-form" class="notify" novalidate>
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required>
           <button class="btn" type="submit" aria-label="Notify me">Notify Me ▶</button>
         </form>
 
-        <div class="socials">
-          <a aria-label="Dribbble" href="#" class="social">●</a>
-          <a aria-label="Instagram" href="#" class="social">●</a>
-          <a aria-label="LinkedIn" href="#" class="social">●</a>
+        <div class="socials" aria-hidden="true">
+          <a href="#" class="social">●</a>
+          <a href="#" class="social">●</a>
+          <a href="#" class="social">●</a>
         </div>
       </section>
 
