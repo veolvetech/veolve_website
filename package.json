@@ -1,0 +1,10 @@
+{
+  "name": "veolve-coming-soon",
+  "version": "1.0.0",
+  "description": "Veolve coming soon landing page",
+  "scripts": {
+    "start": "npx http-server src -p 8080",
+    "test": "bash tests/smoke_test.sh"
+  },
+  "devDependencies": {}
+}
