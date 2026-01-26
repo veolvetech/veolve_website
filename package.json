@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "Veolve coming soon landing page",
   "scripts": {
-    "dev": "npx http-server src -p 5173 --cors -o",
-    "build": "echo 'Static site — no build step required'",
-    "start": "npx http-server src -p 8080",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 8080",
+    "start": "vite preview --port 8080",
     "test": "bash tests/smoke_test.sh"
   },
   "dependencies": {
-    "docker": "^1.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "postcss": "^8.4.24",
+    "autoprefixer": "^10.4.14"
   }
 }
