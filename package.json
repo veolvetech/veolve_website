@@ -1,7 +1,8 @@
 {
-  "name": "veolve-coming-soon",
+  "name": "veolve-tech",
   "version": "1.0.0",
-  "description": "Veolve coming soon landing page",
+  "description": "Veolve Tech Best IT Company in Ahemdabad, India. We provide Web Development, Mobile App Development, Digital Marketing, and more IT services.",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,13 +11,19 @@
     "test": "bash tests/smoke_test.sh"
   },
   "dependencies": {
+    "framer-motion": "^12.31.0",
+    "lucide-react": "^0.563.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-helmet-async": "^2.0.5",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "postcss": "^8.4.24",
-    "autoprefixer": "^10.4.14"
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.0.0"
   }
 }
