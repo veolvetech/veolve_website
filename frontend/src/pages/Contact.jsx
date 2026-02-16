@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import toast, { Toaster } from 'react-hot-toast'
+import axios from 'axios'
 import {
   Mail,
   Phone,
@@ -12,8 +13,8 @@ import {
 export default function Contact() {
   const [loading, setLoading] = useState(false)
 
-  // 🔴 CHANGE THESE
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxj8DhvydOLVYbbX8jvCgZhoOmRRMIjAHXCafzvwm4y0JOYo7ufWKnyoAK9tdwgzRGF/exec'
+  const API_URL = import.meta.env.VITE_API_URL
+
   const email = 'info@veolve.com'
   const phone = '+919428823321'
   const whatsapp = '919428823321'
@@ -25,6 +26,7 @@ export default function Contact() {
     setLoading(true)
 
     const form = e.target
+
     const data = {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
@@ -38,21 +40,24 @@ export default function Contact() {
     }
 
     try {
-      const res = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(data),
+      const response = await axios.post(`${API_URL}/contact`, data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
       })
 
-      const result = await res.json()
-
-      if (result.success) {
+      if (response.status === 200) {
         toast.success('Message sent successfully!')
         form.reset()
-      } else {
-        toast.error('Submission failed')
       }
-    } catch (err) {
-      toast.error('Network error')
+    } catch (error) {
+      if (error.response?.status === 422) {
+        const errors = error.response.data.errors
+        const firstError = Object.values(errors)[0][0]
+        toast.error(firstError)
+      } else {
+        toast.error('Something went wrong. Please try again.')
+      }
     }
 
     setLoading(false)
@@ -60,21 +65,20 @@ export default function Contact() {
 
   return (
     <>
-
       <Helmet>
         <title>Contact Veolve | Custom Software & AI Solutions</title>
         <meta
           name="description"
           content="Get in touch with Veolve to discuss custom software development, AI automation, or full-stack digital solutions for your business."
         />
-        <link rel="canonical" href="https://veolve.com/" />
+        <link rel="canonical" href="https://veolve.com/contact" />
       </Helmet>
 
       <main className="min-h-screen bg-white flex items-center justify-center">
         <Toaster position="top-right" />
 
         <div className="container max-w-5xl px-6 py-20 grid md:grid-cols-2 gap-16">
-          {/* LEFT — CONTACT INFO */}
+          {/* LEFT */}
           <div>
             <h1 className="text-3xl font-semibold mb-4 text-[#0E1130]">
               Contact Us
@@ -85,7 +89,6 @@ export default function Contact() {
               Reach out — we respond fast.
             </p>
 
-            {/* CONTACT LINKS */}
             <div className="space-y-5 text-gray-700">
               <a
                 href={`mailto:${email}`}
@@ -104,7 +107,6 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* SOCIAL MEDIA */}
             <div className="mt-10 flex gap-6 text-gray-600">
               <a
                 href={`https://wa.me/${whatsapp}`}
@@ -114,6 +116,7 @@ export default function Contact() {
               >
                 <MessageCircle size={18} />
               </a>
+
               <a
                 href={linkedin}
                 target="_blank"
@@ -134,7 +137,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT — FORM */}
+          {/* RIGHT */}
           <form
             onSubmit={handleSubmit}
             className="bg-gray-50 p-8 rounded-xl shadow-sm grid gap-4"
