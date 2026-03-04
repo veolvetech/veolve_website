@@ -1,17 +1,21 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import heroBg from '../../assets/images/hero-bg.jpg'
+import heroBg from '../../assets/images/hero-bg.webp'
 
 export default function Hero() {
   const phone = '+919428823321'
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-white">
-      
+    <section className="relative min-h-[100svh] flex items-center justify-center text-white">
+
       {/* Background Image */}
       <img
         src={heroBg}
         alt="Enterprise software background"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -23,7 +27,7 @@ export default function Hero() {
         className="relative container text-center py-32"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         {/* Heading */}
         <h1
@@ -56,19 +60,15 @@ export default function Hero() {
 
         {/* Buttons — CONNECTED */}
         <div className="mt-10 flex justify-center gap-4">
-          
+
           {/* Let’s Build → Contact page */}
-          <Link to="/contact">
-            <button className="btn-secondary-black">
-              Let’s Build
-            </button>
+          <Link to="/contact" className="btn-secondary-black">
+            Let’s Build
           </Link>
 
           {/* Book a Call → Phone */}
-          <a href={`tel:${phone}`}>
-            <button className="btn-primary-black">
-              Book a call
-            </button>
+          <a href={`tel:${phone}`} className="btn-primary-black">
+            Book a call
           </a>
 
         </div>

@@ -7,6 +7,9 @@ import Contact from './pages/Contact'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import PrivacyPolicy from './pages/Privacy'
+import TermsOfService from './pages/Terms'
+import ErrorPage from './pages/ErrorPage'
+import LaunchOfferModal from "./components/common/LaunchOfferModal"
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -33,7 +36,10 @@ export default function App() {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <LaunchOfferModal />
       <Footer />
     </>
   )

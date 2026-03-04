@@ -7,6 +7,8 @@ import Blogs from '../components/home/Blogs'
 import HowWeWork from '../components/home/HowWeWork'
 import CTA from '../components/home/CTA'
 import WhatWeBuild from '../components/home/WhatWeBuild'
+import FreeQuotationBar from '../components/common/FreeQuotationBar'
+import ChatBot from '../components/common/ChatBot'
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <link rel="canonical" href="https://veolve.com/" />
       </Helmet>
       <main>
+        <FreeQuotationBar />
+        {/* <ChatBot /> */}
         <Hero />
         <Stats />
         <WhatWeBuild />

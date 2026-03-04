@@ -21,19 +21,22 @@ export default function PrivacyPolicy() {
         <div className="container max-w-2xl mx-auto">
 
           {/* Header */}
-          <header className="mb-10">
-            <p className="text-xs tracking-[0.25em] uppercase text-[#0E1130] mb-2">
-              Legal
-            </p>
+          <div className="mb-12">
+            <div className="mb-6">
+              <p className="text-xs tracking-widest uppercase text-[#6e76f0] font-semibold mb-2">
+                Legal
+              </p>
+              <span className="block h-[2px] w-10 bg-[#0E1130]" />
+            </div>
 
-            <h1 className="text-3xl md:text-4xl font-semibold text-[#0E1130] mb-3">
+            <h1 className="text-4xl md:text-5xl font-semibold text-[#0E1130] leading-tight mb-4">
               Privacy Policy
             </h1>
 
             <p className="text-sm text-gray-500">
               Last updated: 14 February 2026
             </p>
-          </header>
+          </div>
 
           {/* Content */}
           <div className="text-[15px] leading-7 text-gray-700 space-y-6">
@@ -141,12 +144,12 @@ export default function PrivacyPolicy() {
             </h2>
 
             <p>
-              <Link to="/" className="focus:outline-none focus-visible:outline-none flex items-center z-50" onClick={() => setMenuOpen(false)}> <img src={logoSrc} alt="VE Logo" className="h-4 w-auto mr-2 mb-2" /> 
-              {/* <p className="font-bold text-xl">VEOLVE <br /></p> */}
+              <Link to="/" className="focus:outline-none focus-visible:outline-none flex items-center z-50" onClick={() => setMenuOpen(false)}> <img src={logoSrc} alt="VE Logo" className="h-4 w-auto mr-2 mb-2" />
+                {/* <p className="font-bold text-xl">VEOLVE <br /></p> */}
               </Link>
-              
+
               <a href={`tel:${+919428823321}`} className="font-medium text-[#0E1130] hover:text-[#6e76f0]"> +91 94288 23321 <br /></a>
-             
+
               {/* VEOLVE <br /> */}
               <a className="mt-2 font-medium text-[#0E1130]" href="mailto:info@veolve.com">info@veolve.com <br /></a>
               Ahmedabad, Gujarat, India <br />

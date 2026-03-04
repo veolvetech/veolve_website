@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import aboutImg from '../../assets/images/about.jpg'
+import aboutImg from '../../assets/images/about.webp'
 import {
   Mail,
   Phone,

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import FakeCount from '../common/FakeCount'
 
-import experienceIcon from '../../assets/icons/experience.png'
-import teamIcon from '../../assets/icons/team.png'
-import projectsIcon from '../../assets/icons/projects.png'
-import clientsIcon from '../../assets/icons/clients.png'
+import experienceIcon from '../../assets/icons/experience.webp'
+import teamIcon from '../../assets/icons/team.webp'
+import projectsIcon from '../../assets/icons/projects.webp'
+import clientsIcon from '../../assets/icons/clients.webp'
 
 const stats = [
   { value: 1, suffix: '+', label: 'Experience', icon: experienceIcon },

@@ -40,7 +40,6 @@ export default function Footer() {
               <li><Link to="/blogs" className="hover:text-white">Blogs</Link></li>
               <li><Link to="/about" className="hover:text-white">About Us</Link></li>
               <li><Link to="/contact" className="hover:text-white">Contact Us</Link></li>
-              <li><Link to="/privacy" className="hover:text-white">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -83,10 +82,18 @@ export default function Footer() {
                   {phone}
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://crunchbase.com/organization/veolve"
+                  className="hover:text-white"
+                >
+                  View on CrunchBase
+                </a>
+              </li>
             </ul>
 
             {/* Social Media */}
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-4 flex items-center gap-4">
               <a
                 href="https://www.linkedin.com/company/veolve-tech"
                 target="_blank"
@@ -137,7 +144,6 @@ export default function Footer() {
                 <MessageCircle size={18} />
               </a>
             </div>
-
           </div>
 
         </div>
@@ -146,13 +152,38 @@ export default function Footer() {
         <div className="my-10 h-px bg-white/10" />
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm text-white/60">
+
+          {/* Left */}
           <p>
-            © {new Date().getFullYear()} Veolve. All rights reserved.
+            © 2026 Veolve. All rights reserved.
           </p>
-          <p className="text-gray-500">
-            Built with engineering discipline.
-          </p>
+
+          {/* Right */}
+          <div className="flex flex-col items-start md:items-end gap-2">
+
+            {/* <p>
+              Built with engineering discipline.
+            </p> */}
+
+            <div className="flex gap-6">
+              <Link
+                to="/privacy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                to="/terms"
+                className="hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
